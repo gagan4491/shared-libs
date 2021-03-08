@@ -4,3 +4,4 @@ def call(String name = "Alice") {
             echo Hi ${name}
         """
     }
+}
