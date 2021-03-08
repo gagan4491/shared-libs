@@ -1,3 +1,3 @@
-def helloWorld(String name){
-      println("hello to ", name);
+def call() {
+    println 'Hello World!'
 }
