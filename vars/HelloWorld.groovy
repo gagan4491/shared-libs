@@ -1,7 +1,15 @@
 def call(String name = "Alice") {
-    script {
+    
+    
+    node {
+    stage("Hello World") {
+       script {
         sh """
             echo Hi ${name}
         """
     }
+    }
+}
+
+    
 }
