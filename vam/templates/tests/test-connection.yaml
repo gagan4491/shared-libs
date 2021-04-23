@@ -9,6 +9,7 @@ metadata:
 spec:
   containers:
     - name: wget
+
       image: busybox
       command: ['wget']
       args: ['{{ include "vam.fullname" . }}:{{ .Values.service.port }}']
