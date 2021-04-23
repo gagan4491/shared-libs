@@ -5,9 +5,10 @@
 replicaCount: 1
 nameSpace: web-dev
 pullSecretName: wubs-deployer
+  artifactory.wureachprod.awswuintranet.net/wu-businesssolutions-wubs-docker-dev-local/vam-ref-project/vam-ref-project:210423-160612-add0924
 
 imageUrl: artifactory.wureachprod.awswuintranet.net/wu-businesssolutions-wubs-docker-dev/vam-ref-project/vam-ref-project:210314-064143-1dd7a83
-imageTag: 210314-064143-1dd7a83
+
 image:
   repository: artifactory.wureachprod.awswuintranet.net/wu-businesssolutions-wubs-docker-dev/vam-ref-project/vam-ref-project
   pullPolicy: IfNotPresent
