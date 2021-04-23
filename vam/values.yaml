@@ -4,8 +4,11 @@
 
 replicaCount: 1
 pullSecretName: wubs-deployer
+imageUrl: artifactory.wureachprod.awswuintranet.net/wu-businesssolutions-wubs-docker-dev/vam-ref-project/vam-ref-project:210314-064143-1dd7a83 
+
+
 image:
-  repository: artifactory.wureachprod.awswuintranet.net/wu-businesssolutions-wubs-docker-dev/vam-ref-project/vam-ref-project:210314-064143-1dd7a83
+  repository: artifactory.wureachprod.awswuintranet.net/wu-businesssolutions-wubs-docker-dev/vam-ref-project/vam-ref-project
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
