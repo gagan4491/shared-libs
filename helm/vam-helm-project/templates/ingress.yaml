@@ -1,5 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "vam-helm-project.fullname" . -}}
+{{- $fullName := include "vam-refrence-project.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
@@ -8,9 +8,10 @@ apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
 metadata:
-  name: {{ $fullName }}
+  name: {{ include "vam-refrence-project.fullname" . }}
+  namespace: {{ .Values.nameSpace }}
   labels:
-    {{- include "vam-helm-project.labels" . | nindent 4 }}
+    app: {{ include "vam-refrence-project.fullname" . }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
