@@ -21,7 +21,7 @@ spec:
         {{- include "vam.selectorLabels" . | nindent 8 }}
     spec:
       imagePullSecrets:
-      - name: {{ .Values.pullSecretName }}
+        - name: {{ .Values.pullSecretName }}
       serviceAccountName: {{ include "vam.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
@@ -29,11 +29,11 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.imageUrl }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 9898
               protocol: TCP
           livenessProbe:
             httpGet:
