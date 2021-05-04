@@ -9,6 +9,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
+    app: guestbook
     matchLabels:
       {{- include "vam.selectorLabels" . | nindent 6 }}
   template:
